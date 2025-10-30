@@ -46,7 +46,7 @@ def theand(address,list):
 
 
 def PrintOpenDoors():
-  print(f"The scan was completed and open {openDoors} were found.")
+  print(f"The scan was completed and {openDoors} open doors were found.")
 
 def ConnectionError(address):
   print(Fore.RED + f"No connection was found for the following address: {address}")
