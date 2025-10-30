@@ -1,7 +1,7 @@
 import socket
 import os
-from colorama import init, Fore, Back, Style
-from LogoAscii import Logo
+from colorama import init, Fore
+from .LogoAscii import Logo
 import threading
 
 init(autoreset=True)
