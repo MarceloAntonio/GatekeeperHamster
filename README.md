@@ -56,7 +56,7 @@ This project uses `threading` to check multiple ports concurrently, `argparse` f
 
     ```bash
     git clone https://github.com/MarceloAntonio/GatekeeperHamster
-    cd py_port_scanner
+    cd GatekeeperHamster
     ```
 
 2.  Install the dependencies:
