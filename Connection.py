@@ -6,6 +6,7 @@ import threading
 
 init(autoreset=True)
 
+print_lock = threading.Lock()
 
 
 
@@ -22,9 +23,10 @@ def LoopOpenDoors(address,port):
         sock.settimeout(0.5)
         try:
           result = sock.connect_ex((address,port))
-          if result == 0:
+          with print_lock:
+            if result == 0:
               print(Fore.GREEN + f"port {port} is open\n")
-          else:
+            else:
               print(Fore.RED + f"port {port} is closed\n")
         finally:
           sock.close()
