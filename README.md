@@ -1,4 +1,4 @@
-
+# Gatekeeper Hamster
 
 ```
                 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡴⠒⠒⠒⠒⠒⠒⠒⠦⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -82,6 +82,11 @@ python main.py -h
 **Required Argument:** `URL` (The target's IP or domain)
 
 **Scan Options:**
+
+  * **`--open` or `-o`**: print just open doors. OBS: do you need put other scan option to this functions works.
+    ```bash
+    python main.py example.com --all -o
+    ```
 
   * **`--all` or `-a`**: Scan all ports from the main list.
     ```bash

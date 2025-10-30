@@ -1,6 +1,7 @@
-from .Connection import Connection
+import GatekeeperHamster.Connection as Connection
 import argparse
 from .List import *
+
 
 
 
@@ -19,30 +20,39 @@ def Arguments():
   parser.add_argument('--db','-d',action='store_true', help='Check just database ports')
   parser.add_argument('--ftp','-p',action='store_true', help='Check just ftp ports')
   parser.add_argument('--remote','-r',action='store_true', help='Check just remote ports')
+  parser.add_argument('--open','-o',action='store_true', help='show just open doors')
+  
+  
+  
   
 
   arg = parser.parse_args()
+  if arg.open:
+      openDoor = arg.open
+      Connection.justOpenDoors = openDoor
+      
    
   if arg.all:
-      Connection(arg.URL, allPortsList)
+      Connection.Connection(arg.URL, allPortsList)
 
   elif arg.web:
-      Connection(arg.URL, webList)
+      Connection.Connection(arg.URL, webList)
 
   elif arg.network:
-      Connection(arg.URL, networkList)
+      Connection.Connection(arg.URL, networkList)
 
   elif arg.file:
-      Connection(arg.URL, filesList)
+      Connection.Connection(arg.URL, filesList)
 
   elif arg.db:
-      Connection(arg.URL, dbList)
+      Connection.Connection(arg.URL, dbList)
 
   elif arg.ftp:
-      Connection(arg.URL, ftpList)
+      Connection.Connection(arg.URL, ftpList)
 
   elif arg.remote:
-      Connection(arg.URL, remoteList)
+      Connection.Connection(arg.URL, remoteList)
 
   else:
       print("No options selected. Use -h to see the options.")
+
